@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" fill="none" role="img" aria-label="eSZ OFFICE logo">
+  <!-- Replaceable placeholder wordmark for eSZ OFFICE -->
+  <rect x="2" y="4" width="36" height="36" rx="9" fill="#1D4ED8" />
+  <path d="M12 14h16M12 22h11M12 30h16" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" />
+  <rect x="25" y="19" width="5" height="6" rx="1.5" fill="#93C5FD" />
+  <text x="48" y="29" font-family="Plus Jakarta Sans, system-ui, -apple-system, sans-serif" font-size="21" font-weight="700" letter-spacing="-0.03em" fill="currentColor">
+    eSZ <tspan font-weight="500" fill="#1D4ED8">OFFICE</tspan>
+  </text>
+</svg>

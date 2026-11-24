@@ -1,0 +1,714 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Self-hosted SIL Open Font License 1.1 metric-compatible offline document fonts */
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("/fonts/liberation-serif-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("/fonts/liberation-serif-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("/fonts/liberation-serif-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("/fonts/liberation-serif-700-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("/fonts/liberation-sans-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("/fonts/liberation-sans-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("/fonts/liberation-sans-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("/fonts/liberation-sans-700-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("/fonts/liberation-mono-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("/fonts/liberation-mono-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("/fonts/liberation-mono-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("/fonts/liberation-mono-700-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Carlito";
+  src: url("/fonts/carlito-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Carlito";
+  src: url("/fonts/carlito-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Carlito";
+  src: url("/fonts/carlito-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Carlito";
+  src: url("/fonts/carlito-700-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Caladea";
+  src: url("/fonts/caladea-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caladea";
+  src: url("/fonts/caladea-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caladea";
+  src: url("/fonts/caladea-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caladea";
+  src: url("/fonts/caladea-700-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, code, pre {
+    font-family: var(--font-mono);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Word-style TipTap / ProseMirror rich document typography & blocks */
+.esz-doc-editor .ProseMirror {
+  outline: none;
+  min-height: 600px;
+  color: inherit;
+  word-wrap: break-word;
+}
+
+.esz-doc-editor .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #94a3b8;
+  pointer-events: none;
+  height: 0;
+}
+
+.esz-doc-editor .ProseMirror h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 1.2em;
+  margin-bottom: 0.45em;
+  color: var(--doc-heading-color, #1e3a8a);
+}
+
+.esz-doc-editor .ProseMirror h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 1.1em;
+  margin-bottom: 0.4em;
+  color: var(--doc-heading-color, #1d4ed8);
+}
+
+.esz-doc-editor .ProseMirror h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 0.95em;
+  margin-bottom: 0.35em;
+  color: var(--doc-heading-color, #1e40af);
+}
+
+.esz-doc-editor .ProseMirror h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 0.8em;
+  margin-bottom: 0.3em;
+}
+
+.esz-doc-editor .ProseMirror p {
+  margin-top: 0;
+  margin-bottom: 0.65em;
+}
+
+/* Imported OOXML documents strictly obey word/styles.xml (Heading1, Heading3, BodyText, docDefaults)
+   — never app heading colours, hardcoded rem sizes, or synthetic paragraph margins. */
+.esz-doc-editor.esz-imported-docx .ProseMirror h1,
+.esz-doc-editor.esz-imported-docx .ProseMirror h2,
+.esz-doc-editor.esz-imported-docx .ProseMirror h3,
+.esz-doc-editor.esz-imported-docx .ProseMirror h4 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.esz-doc-editor.esz-imported-docx .ProseMirror p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.esz-doc-editor.esz-imported-docx .ProseMirror img {
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Real OOXML inline tab node (<w:tab/>) with optional leader lines & formatting-mark arrow */
+.esz-doc-editor .ProseMirror .esz-doc-tab {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  white-space: pre;
+  overflow: hidden;
+  min-width: 12px;
+  height: 1em;
+  line-height: inherit;
+  color: transparent;
+  user-select: text;
+}
+
+.esz-doc-editor .ProseMirror .esz-doc-tab[data-tab-leader="dot"]::after,
+.esz-doc-editor .ProseMirror .esz-doc-tab[data-tab-leader="middleDot"]::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 0.18em;
+  border-bottom: 1.5px dotted currentColor;
+  color: #000000;
+}
+
+.esz-doc-editor .ProseMirror .esz-doc-tab[data-tab-leader="underscore"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.12em;
+  border-bottom: 1px solid #000000;
+}
+
+.esz-doc-editor .ProseMirror .esz-doc-tab[data-tab-leader="hyphen"]::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 0.35em;
+  border-bottom: 1px dashed #000000;
+}
+
+.esz-doc-editor.esz-show-formatting-marks .ProseMirror .esz-doc-tab::before {
+  content: "→";
+  position: absolute;
+  left: 2px;
+  top: 0;
+  font-size: 0.75em;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.esz-doc-editor .ProseMirror ul {
+  list-style-type: disc;
+  padding-left: 1.65rem;
+  margin: 0.5em 0;
+}
+
+.esz-doc-editor .ProseMirror ul ul {
+  list-style-type: circle;
+}
+
+.esz-doc-editor .ProseMirror ul ul ul {
+  list-style-type: square;
+}
+
+.esz-doc-editor .ProseMirror ol {
+  list-style-type: decimal;
+  padding-left: 1.65rem;
+  margin: 0.5em 0;
+}
+
+.esz-doc-editor .ProseMirror ol ol {
+  list-style-type: lower-alpha;
+}
+
+.esz-doc-editor .ProseMirror ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.esz-doc-editor .ProseMirror li {
+  margin: 0.2em 0;
+}
+
+.esz-doc-editor .ProseMirror blockquote {
+  border-left: 3px solid var(--doc-accent-color, #1d4ed8);
+  padding-left: 1rem;
+  margin: 0.85em 0;
+  font-style: italic;
+  color: #475569;
+}
+
+.esz-doc-editor .ProseMirror a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.esz-doc-editor .ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0.75em 0;
+}
+
+.esz-doc-editor .ProseMirror .tableWrapper {
+  margin: 0.9em 0;
+}
+
+.esz-doc-editor .ProseMirror table {
+  border-collapse: collapse;
+  max-width: 100%;
+  margin: 0.9em 0;
+  table-layout: fixed;
+  break-inside: auto;
+}
+
+.esz-doc-editor .ProseMirror table:not([data-table-width]) {
+  width: 100%;
+}
+
+.esz-doc-editor .ProseMirror .tableWrapper > table {
+  margin: 0;
+}
+
+.esz-doc-editor .ProseMirror tr {
+  break-inside: avoid;
+}
+
+.esz-doc-editor .ProseMirror td,
+.esz-doc-editor .ProseMirror th {
+  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+  vertical-align: top;
+  min-width: 24px;
+}
+
+.esz-doc-editor .ProseMirror th {
+  font-weight: 600;
+  text-align: left;
+}
+
+.esz-doc-editor .ProseMirror th:not([data-bg-color]) {
+  background-color: #f1f5f9;
+}
+
+.esz-doc-editor .ProseMirror .selectedCell {
+  background-color: rgba(37, 99, 235, 0.12);
+}
+
+.esz-doc-editor .ProseMirror hr {
+  border: none;
+  border-top: 1px solid #cbd5e1;
+  margin: 1.2em 0;
+}
+
+/* Page breaks are invisible in normal View and Edit modes; only shown when "Show formatting marks" is active */
+.esz-doc-editor .ProseMirror [data-page-break="true"] {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 0;
+  line-height: 0;
+  user-select: none;
+  break-inside: avoid;
+}
+
+.esz-doc-editor.esz-show-formatting-marks:not(.esz-view-readonly) .ProseMirror [data-page-break="true"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin: 4px 0;
+  padding: 2px 0;
+  border-top: 1px dashed #94a3b8;
+  border-bottom: 1px dashed #94a3b8;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 1;
+  overflow: visible;
+}
+
+/* Paginated Print-Layout Editor Overlay & Zero-Drift Spacer Widgets */
+.esz-doc-editor.esz-paginated .ProseMirror {
+  min-height: 0;
+  background: transparent;
+}
+
+.esz-doc-editor.esz-paginated .ProseMirror > :first-child,
+.esz-doc-editor.esz-paginated .ProseMirror > :first-child > :first-child {
+  margin-top: 0;
+}
+
+.esz-doc-editor.esz-paginated .ProseMirror img {
+  max-height: var(--doc-max-block-height, 960px);
+  object-fit: contain;
+}
+
+.esz-doc-editor.esz-paginated .ProseMirror [data-doc-locked="true"] img {
+  max-height: calc(var(--doc-max-block-height, 960px) - 44px);
+  object-fit: contain;
+}
+
+.esz-page-spacer {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+.esz-multi-col .esz-page-spacer {
+  column-span: all;
+}
+
+.esz-page-spacer + *,
+.esz-page-spacer + * > :first-child {
+  margin-top: 0 !important;
+}
+
+.esz-page-spacer-inline {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+.esz-page-spacer-row,
+.esz-page-spacer-row td {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+.esz-page-spacer-li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+.esz-page-spacer-li + li {
+  margin-top: 0 !important;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-textbox="true"]:not([data-box-custom="true"]) {
+  border: 1.5px solid var(--doc-accent-color, #1d4ed8);
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 0.9em 0;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-textbox="true"][data-box-custom="true"] {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  break-inside: avoid;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-textbox="true"][data-box-custom="true"] p:last-child {
+  margin-bottom: 0;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-locked="true"] {
+  border: 1.5px dashed #94a3b8;
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 0.8em auto;
+  text-align: center;
+  user-select: none;
+  break-inside: avoid;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-locked="true"] .esz-locked-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-locked="true"] .esz-locked-detail {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-locked="true"] .esz-locked-badge {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #475569;
+  background: #e2e8f0;
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-equation="true"] {
+  font-family: "Caladea", "Cambria Math", "Cambria", "Liberation Serif", "Times New Roman", serif;
+  font-style: italic;
+  text-align: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin: 0.9em 0;
+  font-size: 1.15rem;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-shape="true"] {
+  margin: 0.9em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-caption="true"] {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #475569;
+  margin-top: -0.35em;
+  margin-bottom: 0.9em;
+}
+
+.esz-doc-editor .ProseMirror [data-doc-toc="true"] {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 0.9em 0 1.2em;
+  max-width: 100%;
+  break-inside: avoid;
+}
+
+.esz-doc-editor .ProseMirror [data-bookmark] {
+  border-bottom: 2px dotted #0ea5e9;
+}
+
+.esz-doc-editor .ProseMirror sup[data-note-ref] {
+  color: #1d4ed8;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(36px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@layer base {
+  .esz-docx-preview-host h1,
+  .esz-docx-preview-host h2,
+  .esz-docx-preview-host h3,
+  .esz-docx-preview-host h4,
+  .esz-doc-editor h1,
+  .esz-doc-editor h2,
+  .esz-doc-editor h3,
+  .esz-doc-editor h4 {
+    font-family: inherit;
+  }
+
+  .esz-docx-preview-host code,
+  .esz-docx-preview-host pre,
+  .esz-doc-editor code,
+  .esz-doc-editor pre {
+    font-family: "Liberation Mono", "Courier New", monospace;
+  }
+}
+
+/* Faithful docx-preview View Mode host — strictly isolated from app shell typography */
+.esz-docx-preview-host {
+  font-family: var(--esz-doc-default-font, "Liberation Serif", "Times New Roman", serif);
+  font-size: var(--esz-doc-default-size, 11pt);
+  color: var(--esz-doc-default-color, #000000);
+}
+
+.esz-docx-preview-host .esz-docx-wrapper {
+  background: transparent !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.esz-docx-preview-host .esz-docx-wrapper > section.esz-docx {
+  position: relative;
+  background: #ffffff;
+  color: #000000;
+  margin: 0 !important;
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.1),
+    0 1px 3px rgba(15, 23, 42, 0.08) !important;
+  border: 1px solid #cbd5e1;
+  box-sizing: border-box;
+  overflow: hidden;
+  hyphens: none;
+}
+
+.esz-docx-preview-host section.esz-docx table {
+  border-collapse: collapse;
+  max-width: 100%;
+}
+
+.esz-docx-preview-host section.esz-docx img {
+  max-width: 100%;
+}
+
+.esz-docx-preview-host .esz-docx-shape-wrapper {
+  position: relative;
+  z-index: 3;
+}
+
+.esz-docx-preview-host .esz-docx-shape-box p {
+  min-height: 1em;
+}
+

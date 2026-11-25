@@ -1,3 +1,4 @@
+import {Analytics} from '@vercel/analytics/react';
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import {useSWUpdate} from './core/pwa/useSWUpdate';
 import {AppShell} from './shell/AppShell';
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AppShell>
+        <Analytics />
       </BrowserRouter>
     </ErrorBoundary>
   );
